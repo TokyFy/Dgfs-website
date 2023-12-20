@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
 
@@ -12,7 +13,7 @@ export default async function Home() {
 
                 <div className="grid grid-cols-4 gap-6">
                     {
-                        data.map(chu => <ChuCard name={chu.name} image={chu.image || "/assets/hopital.png"} logo={chu.logo || "/assets/MINSAN.jpg"}/>)
+                        data.map((chu , index) => <ChuCard key={index + "chu"} id={chu.id} name={chu.name} image={chu.image || "/assets/hopital.png"} logo={chu.logo || "/assets/MINSAN.jpg"}/>)
                     }
                 </div>
             </div>
@@ -20,9 +21,11 @@ export default async function Home() {
     )
 }
 
-function ChuCard({image , name , logo}) {
+function ChuCard({image , name , logo , id}) {
     return (
-        <div className="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-green duration-300">
+        <Link
+            href={`/chu/${id}`}
+            className="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-green duration-300">
             <div className="h-48 overflow-hidden flex items-center justify-center">
                 <Image width={620} height={330} src={image} alt={""}/>
             </div>
@@ -34,6 +37,6 @@ function ChuCard({image , name , logo}) {
                     {name}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
