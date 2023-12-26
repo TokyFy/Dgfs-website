@@ -7,8 +7,8 @@ import {ArrowDown, ArrowRight, ChevronDown, ChevronUp} from "lucide-react";
 
 function Departments(props) {
     return (
-        <div className="p-24 px-32  flex flex-col gap-12 bg-green bg-opacity-10">
-            <h1 className="text-green border-b-2 border-red text-4xl font-bold w-max py-2">
+        <div className="p-24 px-14 lg:px-32 flex flex-col gap-12 bg-green bg-opacity-10">
+            <h1 className="text-green border-b-2 border-red text-2xl lg:text-3xl font-bold w-max py-2">
                 Directions rattachées :
             </h1>
 
@@ -27,7 +27,7 @@ function Departments(props) {
                     <Department
                         content={"Direction de la Pharmacie, des Laboratoires et de la Médecine Traditionnelle"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green"> Direction de la Pharmacie, des Laboratoires et de la Médecine Traditionnelle</span>
                                 <span className="">DPLMT</span>
                             </p>
@@ -38,7 +38,7 @@ function Departments(props) {
                     <Department
                         content={"Direction des Hôpitaux des Régions et des Districts"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Direction des Hôpitaux des Régions et des Districts</span>
                                 <span className="">DHRD</span>
                             </p>
@@ -49,7 +49,7 @@ function Departments(props) {
                     <Department
                         content={"Direction des Soins de Santé de Base"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Direction des Soins de Santé de Base</span>
                                 <span> DSSB</span>
                             </p>
@@ -60,7 +60,7 @@ function Departments(props) {
                     <Department
                         content={"Direction du Centre d ’Aide Médicale d’Urgence de Madagascar"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Direction du Centre d ’Aide Médicale d’Urgence de Madagascar</span>
                                 <span> DCAMUM</span>
                             </p>
@@ -71,7 +71,7 @@ function Departments(props) {
                     <Department
                         content={"Direction de la Transfusion Sanguine"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Direction de la Transfusion Sanguine</span>
                                 <span> DTS</span>
                             </p>
@@ -82,7 +82,7 @@ function Departments(props) {
                     <Department
                         content={"Direction des Instituts de Formation des Paramédicaux"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Direction des Instituts de Formation des Paramédicaux</span>
                                 <span> DIFP</span>
                             </p>
@@ -93,7 +93,7 @@ function Departments(props) {
                     <Department
                         content={"Laboratoires d’Analyses Médicales Malagasy"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Laboratoires d’Analyses Médicales Malagasy</span>
                                 <span>LAMM</span>
                             </p>
@@ -104,7 +104,7 @@ function Departments(props) {
                     <Department
                         content={"Service de Suivi et d ’Evaluation des Performances des Structures Sanitaires"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Service de Suivi et d ’Evaluation des Performances des Structures Sanitaires</span>
                                 <span> SSEPSS</span>
                             </p>
@@ -116,7 +116,7 @@ function Departments(props) {
                     <Department
                         content={"Service de Management Qualité et Projets d’Etablissement Hospitaliers"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Service de Management Qualité et Projets d’Etablissement Hospitaliers</span>
                                 <span> SMQPEH</span>
                             </p>
@@ -127,7 +127,7 @@ function Departments(props) {
                     <Department
                         content={"Service Administratif et Financier"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Service Administratif et Financier</span>
                                 <span>SAF</span>
                             </p>
@@ -138,7 +138,7 @@ function Departments(props) {
                     <Department
                         content={"Service d’Appui à la Recherche, à la Formation Continue et à la Gestion de Connaissance"}
                         header={
-                            <p className={"flex gap-3 text-red justify-between grow font-bold"}>
+                            <p className={"flex gap-6 text-red justify-between grow font-bold"}>
                                 <span className="text-green font-bold">Service d’Appui à la Recherche, à la Formation Continue et à la Gestion de Connaissance</span>
                                 <span> SARFCGC</span>
                             </p>
@@ -161,13 +161,13 @@ function Department({id, header, content}) {
             >
                 <Accordion.Trigger
                     asChild>
-                    <div className="py-6 w-full text-start flex justify-between items-center cursor-pointer gap-3">
+                    <div className="py-6 w-full text-start flex justify-between items-start cursor-pointer gap-3">
                         <div className="flex gap-3 grow">
                             {
                                 header
                             }
                         </div>
-                        <div className="text-neutral-400">
+                        <div className="text-neutral-400 flex items-start">
                             <ArrowRight/>
                         </div>
                     </div>

@@ -11,11 +11,11 @@ export default async function Home() {
 
     return (
         <>
-            <div className="px-32 py-12 flex flex-col gap-12">
+            <div className="p-24 px-14 lg:px-32 flex flex-col gap-12">
                 <h1 className="text-2xl font-semibold text-green">Liste des Centres Hospitaliers Universitaires à
                     Madagascar :</h1>
 
-                <div className="grid grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2  2xl:grid-cols-4 gap-6">
                     {
                         data.map((chu , index) => <ChuCard key={index + "chu"} id={chu.id} name={chu.name} image={chu["image_description"] || "/assets/hopital.png"} logo={chu.logo || "/assets/MINSAN.jpg"}/>)
                     }
@@ -30,8 +30,8 @@ function ChuCard({image , name , logo , id}) {
         <Link
             href={`/chu/${id}`}
             className="rounded-lg overflow-hidden cursor-pointer border-2 border-transparent hover:border-green duration-300">
-            <div className="h-48 overflow-hidden flex items-center justify-center">
-                <Image width={620} height={330} src={image} alt={""}/>
+            <div className="h-48 overflow-hidden flex items-center justify-center relative">
+                <Image fill objectFit={'cover'} src={image} alt={""}/>
             </div>
             <div className="flex flex-row-reverse justify-between items-center p-2 bg-neutral-100 gap-6">
                 <div className="w-24 flex aspect-square items-center justify-center overflow-hidden bg-white p-3 rounded-xl ">

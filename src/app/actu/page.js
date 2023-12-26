@@ -13,7 +13,7 @@ async function Actus(props) {
     const data = await getActus();
 
     return (
-        <div id="actu" className="p-12 px-32 pt-0 flex flex-col  my-12">
+        <div id="actu" className="p-24 px-14 lg:px-32 pt-0 flex flex-col  my-12">
             <div className="flex justify-between items-center">
                 <h1 className="text-green text-4xl font-bold w-max">
                     Les actualités du DGFS
@@ -38,12 +38,12 @@ function Actu({title, resume, date, tags, image, id}) {
     return (
         <Link
             href={`/actu/${id}`}
-            className="border-2 rounded-sm overflow-hidden border-transparent hover:border-green duration-300 cursor-pointer grid grid-cols-6">
-            <div className="overflow-hidden relative col-span-1">
+            className="border-2 rounded-sm overflow-hidden border-transparent hover:border-green duration-300 cursor-pointer flex flex-col lg:grid grid-cols-6">
+            <div className="overflow-hidden relative col-span-2 max-lg:min-h-[320px] lg:min-h-[296px] w-full">
                 <Image fill objectFit={"cover"} src={image} alt={""}/>
             </div>
-            <div className="p-6 bg-neutral-100 flex flex-col break-words col-span-5">
-                <p>{date} | {tags}</p>
+            <div className="p-6 bg-neutral-100 flex flex-col justify-end break-words col-span-4">
+                <p className="flex items-center gap-2"><span>{date}</span> | <span className="text-white bg-green font-bold p-1 text-xs rounded">{tags}</span></p>
                 <h1 className="lowercase first-letter:uppercase font-bold text-green">
                     {title}
                 </h1>

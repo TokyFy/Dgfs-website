@@ -10,9 +10,9 @@ async function Actus(props) {
     
 
     return (
-        <div id="actu" className="p-24 px-32 flex flex-col gap-12">
+        <div id="actu" className="p-24 px-14 lg:px-32 flex flex-col gap-12">
             <div className="flex justify-between items-center">
-                <h1 className="text-green border-b-2 border-red text-4xl font-bold w-max py-2">
+                <h1 className="text-green border-b-2 border-red text-2xl lg:text-3xl font-bold w-max py-2">
                     Actualités
                 </h1>
 
@@ -25,7 +25,7 @@ async function Actus(props) {
                 </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-14">
+            <div className="grid xl:grid-cols-3 gap-14">
                 {
                     data.results.slice(0,3)
                     .map(

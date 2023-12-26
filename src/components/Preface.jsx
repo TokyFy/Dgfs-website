@@ -4,9 +4,9 @@ import {ArrowRight} from "lucide-react";
 
 function Preface(props) {
     return (
-        <div className="p-24 px-32 justify-between bg-green bg-opacity-10 grid grid-cols-2 gap-32">
+        <div className="p-24 px-14 lg:px-32 justify-between bg-green bg-opacity-10 grid  grid-cols-1 lg:grid-cols-2 gap-32">
             <div className="flex flex-col justify-center gap-8 " data-aos="fade-down">
-                <h2 className="text-3xl font-bold text-green">
+                <h2 className="text-2xl lg:text-3xl font-bold text-green">
                     La Direction Générale de Fourniture des Soins
                 </h2>
                 <p className="text-neutral-500 text-lg">
@@ -28,7 +28,7 @@ function Preface(props) {
                 </div>
             </div>
 
-            <div data-aos="zoom-in" className="relative">
+            <div data-aos="zoom-in" className="relative min-h-[320px]">
                 <Image fill objectFit={"cover"} src={"/assets/preface.jpeg"} alt={""}/>
             </div>
 

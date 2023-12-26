@@ -2,8 +2,8 @@ import React from 'react';
 
 function Missions(props) {
     return (
-        <div className="p-24 px-32 flex flex-col gap-12">
-            <h1 className="text-green border-b-2 border-red text-4xl font-bold w-max py-2" data-aos="fade-down">
+        <div className="p-24 px-14 lg:px-32 flex flex-col gap-12">
+            <h1 className="text-green border-b-2 border-red text-2xl lg:text-3xl font-bold w-max py-2" data-aos="fade-down">
                 Missions et Attributions
             </h1>
 
@@ -16,7 +16,7 @@ function Missions(props) {
                 au niveau communautaire. Elle est tenue de :
             </p>
 
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
                 <Mission
                     data-aos="fade-left"
                     title={"Mettre en place la Couverture Sanitaire Universelle (CSU) "}

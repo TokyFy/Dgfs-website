@@ -3,10 +3,10 @@ import {MapPin, Mail, Facebook} from "lucide-react";
 export function Contact() {
     return (
         <section className="bg-green bg-opacity-10" id="contact">
-            <div className="py-24 grid grid-cols-2 p-16 px-32 gap-12">
+            <div className="p-24 px-14 lg:px-32  grid xl:grid-cols-2  gap-12">
                 <div className="flex flex-col">
                     <div>
-                        <h2 className="mb-4 text-4xl text-green font-bold  justify-center">Contacter Nous</h2>
+                        <h2 className="mb-4 text-2xl lg:text-3xl text-green font-bold  justify-center">Contacter Nous</h2>
                         <p className="mb-8 lg:mb-16 font-light text-gray-500">
                             Nous sommes ravis de vous offrir notre assistance et de répondre à toutes vos questions.
                             N'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Que vous ayez besoins
