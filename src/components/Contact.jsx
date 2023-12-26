@@ -11,9 +11,7 @@ export function Contact() {
                             Nous sommes ravis de vous offrir notre assistance et de répondre à toutes vos questions.
                             N'hésitez pas à nous contacter en utilisant le formulaire ci-dessous. Que vous ayez besoins
                             d'informations supplémentaires sur nos programmes, que vous souhaitiez partager vos
-                            commentaires
-                            , notre équipe
-                            est là pour vous aider.
+                            commentaires , notre équipe est là pour vous aider.
                         </p>
                     </div>
 
@@ -24,7 +22,7 @@ export function Contact() {
                         </div>
 
                         <div className="flex gap-6 text-green font-bold">
-                            <Mail absoluteStrokeWidth className="text-red"/> contact@dgfs.gov.mg
+                            <Mail absoluteStrokeWidth className="text-red"/> contact@dgfs.mg
                         </div>
 
                         <div className="flex gap-6 text-green font-bold">

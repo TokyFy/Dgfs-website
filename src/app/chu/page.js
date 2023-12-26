@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export async function getChus() {
+    return (await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/etablissement/?limit=30`, {next : {revalidate : 0 }})).json()).results
+}
+
 export default async function Home() {
 
-    const data = (await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/etablissement/?limit=30` , { next: { revalidate: 0 }})).json()).results;
+    const data = await getChus();
 
     return (
         <>
@@ -13,7 +17,7 @@ export default async function Home() {
 
                 <div className="grid grid-cols-4 gap-6">
                     {
-                        data.map((chu , index) => <ChuCard key={index + "chu"} id={chu.id} name={chu.name} image={chu.image || "/assets/hopital.png"} logo={chu.logo || "/assets/MINSAN.jpg"}/>)
+                        data.map((chu , index) => <ChuCard key={index + "chu"} id={chu.id} name={chu.name} image={chu["image_description"] || "/assets/hopital.png"} logo={chu.logo || "/assets/MINSAN.jpg"}/>)
                     }
                 </div>
             </div>

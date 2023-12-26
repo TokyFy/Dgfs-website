@@ -19,7 +19,7 @@ export default function RootLayout({children}) {
             color={"#ea4335"}
         />
         <main>
-            <div className="px-32 sticky top-0 left-0 z-[999] bg-[#e7f0ed]">
+            <div className="px-14 sticky top-0 left-0 z-[999] bg-[#e7f0ed] lg:px-32">
                 <Navbar/>
             </div>
             {children}

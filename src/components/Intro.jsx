@@ -41,7 +41,7 @@ function Intro(props) {
 
 function IntroDetails({title, Icon, content , ...props}) {
     return (
-        <div className="flex flex-col gap-3 p-6 rounded-lg scale-90" {...props}>
+        <div className="flex flex-col gap-3 p-6 rounded-lg scale-90 border-2 border-green" {...props}>
             <div className="text-red">
                 {Icon}
             </div>

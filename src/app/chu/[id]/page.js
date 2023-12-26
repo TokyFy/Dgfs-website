@@ -1,19 +1,20 @@
 import Image from "next/image";
+import {getChus} from "@/app/chu/page";
+import {MDXRemote} from "next-mdx-remote/rsc";
+import React from "react";
 
 export default async function Home({params}) {
 
     const chuId = params.id;
 
-    const data = (await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/etablissement/${chuId}` , { next: { revalidate: 0 }})).json());
-
-    console.log(data)
+    const data = (await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/etablissement/${chuId}` , {next : {revalidate : 0}})).json());
 
     return (
         <>
             <div className="px-32 py-12 flex flex-col gap-12 container mx-auto">
                 <div
-                    className="w-full bg-neutral-100 h-64 relative mb-12">
-                    <Image quality={100} src={data.image || ""} alt={""} fill objectFit={"cover"}/>
+                    className="w-full bg-neutral-100 h-96 relative mb-12">
+                    <Image quality={100} src={data["image_description"] || "/assets/hopital.png"} alt={""} fill objectFit={"cover"}/>
                     <div
                         className="absolute w-full h-full z-50 flex items-end justify-center gap-6">
                         <div className="flex w-full max-w-3xl items-end justify-between gap-6">
@@ -27,16 +28,17 @@ export default async function Home({params}) {
 
                 <div className="max-w-3xl mx-auto flex flex-col gap-6">
 
-                    <h1 className="font-bold text-green text-2xl">{data.name}</h1>
+                    <h1 className="font-bold text-green text-4xl">{data.name}</h1>
 
                     <div className="flex flex-col gap-4">
                         <h2 className="font-bold text-green text-2xl underline">Présentation</h2>
-                        <p>
-                            La Direction Générale de la Fourniture des Soins (DGFS) a pour mission d’assurer la
-                            coordination, l’animation, le suivi et l’évaluation des activités des Directions et des Services
-                            placés sous son autorité. Ces activités seront axées principalement à l’appui au développement
-                            des Hôpitaux publics et privés de Madagascar...
-                        </p>
+                        <div>
+                            {
+                                data.descriptions.length
+                                    ? <MDXRemote source={data.descriptions[0].content}  />
+                                    : ""
+                            }
+                        </div>
                     </div>
 
                     <div className="flex flex-col gap-4">
@@ -80,4 +82,9 @@ function Service({value}) {
             {value}
         </div>
     )
+}
+
+export async function generateStaticParams() {
+    const chus = await getChus();
+    return chus.map((chu) => ({ id: chu.id }));
 }

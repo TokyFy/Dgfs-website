@@ -3,9 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import {formatDate} from "@/utils/date";
 
+export async function getActus() {
+    return  (await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post` , { next: { revalidate: 0 }})).json()).results
+}
+
+
 async function Actus(props) {
 
-    const data = await (await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/post`)).json();
+    const data = await getActus();
 
     return (
         <div id="actu" className="p-12 px-32 pt-0 flex flex-col  my-12">
@@ -17,7 +22,7 @@ async function Actus(props) {
 
             <div className="flex flex-col my-12 gap-6">
                 {
-                    data.results.map(
+                    data.map(
                         (post, index) => <Actu key={index} title={post.title} tags={post.tags[0]}
                                                date={formatDate(post.updated)} resume={post.summary}
                                                image={post.image || ""} id={post.id}/>

@@ -6,7 +6,7 @@ function Footer() {
         <footer
             className="flex flex-col items-centertext-center text-white">
             <div
-                className="w-full bg-white text-neutral-400 bg-opacity-10 p-12 text-center  text-sm"> © 2023 Copyright :
+                className="w-full bg-white text-neutral-400 bg-opacity-10 p-6 text-center  text-sm"> © 2023 Copyright :
                 <a className=""> Direction Générale de Fourniture des Soins </a>
             </div>
         </footer>

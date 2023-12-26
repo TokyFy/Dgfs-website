@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import {Menu} from "lucide-react";
 
 function Navbar(props) {
     return (
@@ -11,7 +12,7 @@ function Navbar(props) {
                     <Image className="h-full w-auto" width={186} height={48} src={"/assets/dgfs-logo.svg"} alt={""}/>
                 </Link>
 
-                <ul className="flex gap-14 text-base font-semibold text-green items-center cursor-pointer">
+                <ul className="gap-14 text-base font-semibold text-green items-center cursor-pointer hidden lg:flex">
                     <Navitem link={"Accueil"} href={"/"}/>
                     <Navitem link={"CHU"} href={"/chu"}/>
                     <Navitem link={"Actualités"} href={"/#actu"}/>
@@ -21,6 +22,10 @@ function Navbar(props) {
                         Contact
                     </Link>
                 </ul>
+
+                <div className="text-green lg:hidden">
+                    <Menu absoluteStrokeWidth size={48}/>
+                </div>
         </div>
     );
 }
