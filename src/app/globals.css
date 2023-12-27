@@ -13,7 +13,3 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-
-h1 {
-    @apply text-amber-100
-}
