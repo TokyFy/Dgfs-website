@@ -7,8 +7,8 @@ function Missions(props) {
                 Missions et Attributions
             </h1>
 
-            <p data-aos="fade-down">
-                La Direction Générale de la Fourniture des Soins (DGFS) a pour mission d’assurer la coordination,
+            <p data-aos="fade-down" className="text-justify">
+                La Direction Générale de Fourniture des Soins (DGFS) a pour mission d’assurer la coordination,
                 l’animation, le suivi et l’évaluation des activités des Directions et des Services placés sous son
                 autorité. Ces activités seront axées principalement à l’appui au développement des Hôpitaux publics et
                 privés de Madagascar, conformément aux axes stratégiques de la réforme Hospitalière et la loi y
@@ -16,7 +16,7 @@ function Missions(props) {
                 au niveau communautaire. Elle est tenue de :
             </p>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 2xl:grid-cols-3 gap-12">
                 <Mission
                     data-aos="fade-left"
                     title={"Mettre en place la Couverture Sanitaire Universelle (CSU) "}
@@ -90,8 +90,8 @@ function Missions(props) {
 
 function Mission({title, text, ...props}) {
     return (
-        <div className="text-neutral-900 p-8 bg-neutral-100 rounded-md text-justify" {...props}>
-            <span className="font-bold text-red">{title}</span> {text}
+        <div className="text-neutral-900 p-8 bg-neutral-100 rounded-md" {...props}>
+            <span className="font-bold text-red text-left">{title}</span> {text}
         </div>
     )
 }

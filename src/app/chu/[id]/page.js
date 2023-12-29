@@ -2,6 +2,7 @@ import Image from "next/image";
 import {getChus} from "@/app/chu/page";
 import {MDXRemote} from "next-mdx-remote/rsc";
 import React from "react";
+import formatNumber from "@/utils/number";
 
 export default async function Home({params}) {
 
@@ -31,8 +32,21 @@ export default async function Home({params}) {
                     <h1 className="font-bold text-green text-4xl">{data.name}</h1>
 
                     <div className="flex flex-col gap-4">
+                        <h2 className="font-bold text-green text-2xl underline">Directeur  d’etablissement</h2>
+                        <div className="flex items-end gap-6">
+                            <div className="w-32 aspect-square bg-neutral-200 rounded-md">
+
+                            </div>
+                            <div>
+                                <p className="font-bold text-xl">{data.directeur.nom} {data.directeur.prenom}</p>
+                                <p>{formatNumber(data.contacts[0].contact_de)}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
                         <h2 className="font-bold text-green text-2xl underline">Présentation</h2>
-                        <div>
+                        <div className="text-justify">
                             {
                                 data.descriptions.length
                                     ? <MDXRemote source={data.descriptions[0].content}  />
@@ -44,10 +58,10 @@ export default async function Home({params}) {
                     <div className="flex flex-col gap-4">
                         <h2 className="font-bold text-green text-2xl underline">Contact</h2>
                         <div className="divide-y">
-                           <Contact who={"Directeur  d’etablissement"} value={data.contacts[0].contact_de || "Non Disponible"}/>
-                           <Contact who={"Urgences"} value={data.contacts[0].contact_urgence || "Non Disponible"}/>
-                           <Contact who={"contact ambulance"} value={data.contacts[0].contact_ambulance || "Non Disponible"}/>
-                           <Contact who={"Contact Accueil"} value={data.contacts[0].contact_accueil || "Non Disponible"}/>
+                           <Contact who={"Directeur  d’etablissement"} value={formatNumber(data.contacts[0].contact_de) || "Non Disponible"}/>
+                           <Contact who={"Urgences"} value={formatNumber(formatNumber(data.contacts[0].contact_urgence)) || "Non Disponible"}/>
+                           <Contact who={"contact ambulance"} value={formatNumber(data.contacts[0].contact_ambulance) || "Non Disponible"}/>
+                           <Contact who={"Contact Accueil"} value={formatNumber(data.contacts[0].contact_accueil) || "Non Disponible"}/>
                         </div>
                     </div>
 

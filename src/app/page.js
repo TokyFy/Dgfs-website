@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
         <Header/>
-        <Intro/>
         <Preface/>
+        <Intro/>
         <Missions/>
         <Departments/>
         <Actus/>
