@@ -13,8 +13,8 @@ export default function Home() {
     <>
         <Header/>
         <Preface/>
-        <Intro/>
         <Missions/>
+        <Intro/>
         <Departments/>
         <Actus/>
         <Contact/>

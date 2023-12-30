@@ -2,8 +2,8 @@ import {MapPin, Mail, Facebook} from "lucide-react";
 
 export function Contact() {
     return (
-        <section className="bg-green bg-opacity-10" id="contact">
-            <div className="p-24 px-14 lg:px-32  grid xl:grid-cols-2  gap-12">
+        <section className="bg-green-secondary" id="contact">
+            <div className="container mx-auto py-24 grid xl:grid-cols-2  gap-12">
                 <div className="flex flex-col">
                     <div>
                         <h2 className="mb-4 text-2xl lg:text-3xl text-green font-bold  justify-center">Contacter Nous</h2>

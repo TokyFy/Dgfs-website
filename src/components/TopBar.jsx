@@ -9,7 +9,7 @@ function TopBar() {
 
     return (
         <div className={`px-14 top-0 left-0 z-[999]  lg:px-32 transition-all duration-500 overflow-hidden ${y >= 1 ? "h-0" : "h-24"}`}>
-            <div className="h-24 justify-between py-4 flex items-center">
+            <div className="container mx-auto h-24 justify-between py-4 flex items-center">
                 <Image className="h-full w-auto" width={186} height={48} src={"/assets/gov.png"} alt={""}/>
                 <Image className="h-full w-auto mix-blend-multiply" width={186} height={48} src={"/assets/minsan.png"} alt={""}/>
             </div>

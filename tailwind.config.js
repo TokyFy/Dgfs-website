@@ -6,6 +6,12 @@ module.exports = {
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        fontFamily : {
+           'primary' : ["sora"],
+            'secondary' : ["Helvetica Neue"],
+            'heading' : ["Georgia"]
+        },
+
         extend: {
             keyframes: {
                 slideDown: {
@@ -25,7 +31,8 @@ module.exports = {
 
             colors: {
                 'green': '#176B4D',
-                'red': "#ea4335"
+                'red': "#ea4335",
+                'green-secondary' : "#F3F6F5"
             },
             backgroundImage: {
                 'hero-gb': "url('/assets/hero-bg.jpeg')",

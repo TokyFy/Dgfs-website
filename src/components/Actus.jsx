@@ -10,7 +10,7 @@ async function Actus(props) {
     
 
     return (
-        <div id="actu" className="p-24 px-14 lg:px-32 flex flex-col gap-12">
+        <div id="actu" className="container mx-auto py-24 flex flex-col gap-12">
             <div className="flex justify-between items-center">
                 <h1 className="text-green border-b-2 border-red text-2xl lg:text-3xl font-bold w-max py-2">
                     Actualités
